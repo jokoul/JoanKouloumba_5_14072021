@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Orinoco - les appareils photo d'excellence</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="https://img.icons8.com/ios-filled/50/fa314a/shopping-cart.png"
+    />
+    <!--SCRIPT IMPLEMENTATION KIT ICON-->
+    <script
+      src="https://kit.fontawesome.com/52339f9582.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  </head>
+  <body>
+    <!--HEADER-->
+    <header class="bg-light container-fluid mb-3">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="./../../backend/images/logo.png"
+            alt="logo orinoco"
+            width="300"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          id="navbarContent"
+          class="collapse navbar-collapse d-md-flex justify-content-md-end"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item active h5">
+              <a class="nav-link" href="./../../index.html">Accueil</a>
+            </li>
+            <li class="nav-item h5">
+              <a class="nav-link" href="./basket.html">Panier</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!--ZONE HERO-->
+      <div class="jumbotron container text-center shadow-lg">
+        <h1 class="h1">Confirmation du payement de votre commande</h1>
+      </div>
+      <!--CONFIRMATION COMMANDE-->
+      <div class="container-fluid">
+        <h3 class="h3 bg-secondary text-light text-center my-3">
+          Reçu du payement
+        </h3>
+        <div class="row" id="payementReceipt">
+          <!--Insertion remerciement + information contact + prix total commande et N° id commande par js-->
+          <p class="col-12 mb-1">
+            <span class="font-weight-bold text-capitalize" id="contactFirstName"
+              >TEST : JOAN</span
+            >, nous vous remercions pour votre commande passée sur notre site le
+            <span class="font-weight-bold" id="date">TEST : 10/11/2021</span> à
+            <span class="font-weight-bold" id="hour">TEST : 10 : 25</span>.
+          </p>
+          <p class="col-12 mb-1">
+            Le numéro d'identification de votre commande est :
+            <span class="font-weight-bold" id="idOrder"
+              >TEST : 15ZFS856Z44FSAER894ZDZZ3AEZS523A</span
+            >
+          </p>
+          <p class="col-12 mb-1">
+            Vous allez reçevoir une notification à votre adresse mail
+            <span class="font-weight-bold">TEST : touambi@gmail.com</span>.
+          </p>
+          <p class="col-12 mb-1">
+            Votre commande sera livré à l'adresse suivante :
+          </p>
+          <p
+            class="col-12 h6 font-weight-bold text-center text-capitalize"
+            id="contactLastName"
+          >
+            TEST : KOUMBA
+          </p>
+          <p class="col-12 h6 font-weight-bold text-center" id="confirmAddress">
+            TEST : 5 avenue du développement informatique
+          </p>
+          <p class="col-12 h6 font-weight-bold text-center" id="confirmCity">
+            TEST : Toulouse
+          </p>
+        </div>
+      </div>
+      <!--RECAPITULATIF PANIER COMMANDÉE-->
+      <div class="container-fluid">
+        <h3 class="h3 bg-secondary text-light text-center my-3">
+          Rappel de vos articles commandés
+        </h3>
+        <div class="table-responsive" id="table">
+          <table class="table table-hover table-stripped text-center">
+            <thead class="thead-light">
+              <tr>
+                <th>Images</th>
+                <th>Nom</th>
+                <th>Lentille</th>
+                <th>Quantité</th>
+                <th>Prix Unitaire</th>
+                <th>Prix Total Article</th>
+              </tr>
+            </thead>
+            <tbody id="tableList">
+              <!--Insertion liste de sélection par js-->
+            </tbody>
+            <tfoot class="thead-light">
+              <tr>
+                <td colspan="4"></td>
+                <th>Prix Total Panier</th>
+                <th id="totalPriceBasket">
+                  <!--Insertion prix total panier par js-->
+                </th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <!--IMPRESSION RECU-->
+      <div class="container-fluid text-center text-md-right col-12 my-5">
+        <button type="button" class="btn btn-dark mr-md-3" id="printReceipt">
+          Imprimer le Reçu
+        </button>
+      </div>
+    </main>
+    <!--FOOTER-->
+    <footer class="bg-light mt-5 p-5">
+      <div class="container text-center">
+        <ul class="list-inline h5">
+          <li class="list-inline-item">
+            <a href="#">&Agrave; propos</a>
+          </li>
+          <li class="list-inline-item">&middot;</li>
+          <li class="list-inline-item">
+            <a href="#">Conditions d'utilisations</a>
+          </li>
+          <li class="list-inline-item">&middot;</li>
+          <li class="list-inline-item">
+            <a href="mailto:contact@orinoco.com?subject=Demande d'information"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <p class="mt-5">Orinoco © 2021</p>
+      </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
