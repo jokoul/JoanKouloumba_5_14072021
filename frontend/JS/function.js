@@ -1,9 +1,8 @@
-/**Ensemble de fonctions et classes nécessaire pour implémenter le côté dynamique des pages
+/**Objectif: Ce fichier (function.js) fournis l'ensemble des fonctions et classes nécessaire au fichier js spécifique (ex: index.js, product.js,etc.) de chaque page afin d'implémenter leur côté dynamique.
  */
 
 //variable globale
 const host = "http://localhost:3000";
-const url = host + "/api/cameras";
 const basket = JSON.parse(localStorage.getItem("cameras")) || [];
 
 //fonction "transformPrice" permet de transformer un nombre en format de prix selon région
@@ -46,17 +45,17 @@ function addArticleCards(basket) {
 //fonction "addArticleCard" permet de compléter la carte de l'article sur la page produit.
 function addArticleCard(article) {
   const productTitle = document.getElementById("productTitle");
-  productTitle.innerHTML = `${article.name}`;
+  productTitle.innerHTML += `${article.name}`;
   const productImage = document.getElementById("productImage");
-  productImage.innerHTML = `<img class="img-fluid img-thumbnail mt-3" src="${article.imageUrl}" alt="${article.name}">`;
+  productImage.innerHTML += `<img class="img-fluid img-thumbnail mt-3" src="${article.imageUrl}" alt="${article.name}">`;
   const productName = document.getElementById("productName");
-  productName.innerHTML = `${article.name}`;
+  productName.innerHTML += `${article.name}`;
   const productDescription = document.getElementById("productDescription");
-  productDescription.innerHTML = `${article.description}`;
+  productDescription.innerHTML += `${article.description}`;
   const productPrice = document.getElementById("productPrice");
-  productPrice.innerHTML = `${transformPrice(article.price)}`;
+  productPrice.innerHTML += `${transformPrice(article.price)}`;
   const lensesChoice = document.getElementById("lensesChoice");
-  let lensesTab = `${article.lenses}`;
+  let lensesTab = article.lenses;
   for (let lenses of lensesTab) {
     lensesChoice.innerHTML += `<option value="${lenses}">${lenses}</option>`;
   }
@@ -68,9 +67,9 @@ class Article {
     this.id = id;
     this.name = name;
     this.description = description;
-    this.price = price;
+    this.price = +price;
     this.lense = lense;
-    this.quantity = quantity;
+    this.quantity = +quantity;
     this.imageUrl = imageUrl;
   }
 }
