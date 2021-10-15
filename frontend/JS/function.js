@@ -45,31 +45,55 @@ function addArticleCards(basket) {
 //fonction "addArticleCard" permet de compléter la carte de l'article sur la page produit.
 function addArticleCard(article) {
   const productTitle = document.getElementById("productTitle");
-  productTitle.innerHTML += `${article.name}`;
+  productTitle.innerHTML = `${article.name}`;
   const productImage = document.getElementById("productImage");
-  productImage.innerHTML += `<img class="img-fluid img-thumbnail mt-3" src="${article.imageUrl}" alt="${article.name}">`;
+  productImage.innerHTML = `<img class="img-fluid img-thumbnail mt-3" src="${article.imageUrl}" alt="${article.name}">`;
   const productName = document.getElementById("productName");
-  productName.innerHTML += `${article.name}`;
+  productName.innerHTML = `${article.name}`;
   const productDescription = document.getElementById("productDescription");
-  productDescription.innerHTML += `${article.description}`;
+  productDescription.innerHTML = `${article.description}`;
   const productPrice = document.getElementById("productPrice");
-  productPrice.innerHTML += `${transformPrice(article.price)}`;
+  productPrice.innerHTML = `${transformPrice(article.price)}`;
   const lensesChoice = document.getElementById("lensesChoice");
   let lensesTab = article.lenses;
-  for (let lenses of lensesTab) {
-    lensesChoice.innerHTML += `<option value="${lenses}">${lenses}</option>`;
+  for (let i = 0; i < lensesTab.length; i++) {
+    lensesChoice.innerHTML += `<option value="${lensesTab[i]}">${lensesTab[i]}</option>`;
   }
 }
 
-//création de la classe Article
+//classe Article
 class Article {
   constructor(id, name, description, price, lense, quantity, imageUrl) {
     this.id = id;
     this.name = name;
     this.description = description;
-    this.price = +price;
+    this.price = price;
     this.lense = lense;
-    this.quantity = +quantity;
+    this.quantity = quantity;
     this.imageUrl = imageUrl;
+  }
+}
+
+//fonction "addArticleToBasket" permet de rajouter l'article personnalisé au panier
+function addArticleToBasket(article) {
+  let isArticleInBasket = false;
+  let indexOfArticle;
+  for (let product of basket) {
+    //On vérifie si il y a deux produits identiques dans le panier
+    if (product.id == article.id && product.lense == article.lense) {
+      isArticleInBasket = true;
+      indexOfArticle = basket.indexOf(product);
+    }
+  }
+
+  if (isArticleInBasket) {
+    //Si oui alors on incrémente juste la quantité et on stocke dans le storage
+    basket[indexOfArticle].quantity =
+      +basket[indexOfArticle].quantity + +article.quantity;
+    localStorage.setItem("cameras", JSON.stringify(basket));
+  } else {
+    //Sinon on ajoute l'article personnalisé dans le panier et on stocke dans le storage
+    basket.push(article);
+    localStorage.setItem("cameras", JSON.stringify(basket));
   }
 }
