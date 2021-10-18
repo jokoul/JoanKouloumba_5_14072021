@@ -39,6 +39,15 @@ fetch(url2)
       );
       // Ajout de l'article personnalisé au panier
       addArticleToBasket(articleObject);
+
+      //personnalisation du message de confirmation d'ajout au panier dans la fenêtre modal
+      const modalTitle = document.getElementById("modalTitle");
+      modalTitle.innerHTML += `${jsonArticle.name}`;
+      const modalText = document.getElementById("modalText");
+      const logoPanier = document.createElement("span");
+      logoPanier.classList.add("h5", "font-weigth-bold");
+      logoPanier.innerHTML = '<i class="fas fa-shopping-basket"></i>';
+      modalText.appendChild(logoPanier);
     });
   })
   .catch((error) => {

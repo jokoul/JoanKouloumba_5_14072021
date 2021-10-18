@@ -131,6 +131,7 @@
               class="btn btn-danger"
               data-toggle="modal"
               data-target="#emptyBasketModal"
+              id="testStorage"
             >
               Vider le panier
             </button>
@@ -193,6 +194,7 @@
                 class="form-control"
                 type="text"
                 placeholder="ex : Nocori"
+                id="lastName"
                 pattern="^(([a-zA-Zéèêëîïàôö]+[\-]{1}[a-zA-Zéèêëîïàôö])|([a-zA-Zéèêëîïàôö]+))$"
                 required
               />
@@ -204,7 +206,7 @@
                 type="text"
                 id="address"
                 placeholder="ex : 3 rue de la racine"
-                pattern="^([a-zA-Z0-9éèêëîïàôö]+[\s\-]?[a-zA-Z0-9éèêëîïàôö]*){1,5}$"
+                pattern="^([a-zA-Z0-9éèêëîïàôö]+[\s\-]?){1,5}$"
                 required
               />
             </div>
@@ -215,7 +217,7 @@
                 type="text"
                 id="city"
                 placeholder="ex : Bambari"
-                pattern="^([a-zA-Zéèêëîïàôö]+){1,5}$"
+                pattern="^([a-zA-Z0-9éèêëîïàôö]+[\s\-]?){1,5}$"
                 required
               />
             </div>
@@ -235,7 +237,12 @@
             </div>
             <div class="form-group form-check col-12 m-3">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" required />
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  required
+                  id="checkBox"
+                />
                 J'accepte les conditions générale de vente.
                 <a href="#" data-toggle="modal" data-target="#sellModal">
                   En savoir plus...
