@@ -153,13 +153,12 @@ function displayListArticleInTable(articleTab) {
 
 //fonction "calculTotalPriceBasket" permet de claculer le prix total du panier
 function calculTotalPriceBasket(articleTab) {
-  const totalPriceBasket = document.getElementById("totalPriceBasket");
   let totalPriceCount = 0;
   for (let article of articleTab) {
     totalPriceCount += article.quantity * article.price;
   }
   totalPriceCount = transformPrice(totalPriceCount);
-  totalPriceBasket.innerHTML = totalPriceCount;
+  return totalPriceCount;
 }
 
 //fonction "addArticlePlus" permet d'incrémenter la quantité de l'article avec le bouton "+"
@@ -247,4 +246,21 @@ function saveDate() {
   const formatDateTab = JSON.parse(localStorage.getItem("date")) || [];
   formatDateTab.push(formatDateTotal);
   localStorage.setItem("date", JSON.stringify(formatDateTab));
+}
+
+//Fonction "printReceipt" permet d'imprimer le reçu de la commande
+function printReceipt() {
+  window.print();
+}
+
+//fonction "basketPreview" permet de prévisualiser la quantité du panier
+function basketPreview() {
+  if (basket.length != 0) {
+    const viewBasketBadge = document.getElementById("viewBasketBadge");
+    let quantityTotalBasketCount = 0;
+    for (let article of basket) {
+      quantityTotalBasketCount += +article.quantity;
+    }
+    viewBasketBadge.innerHTML = `Panier <span class="badge badge-pill align-middle badge-dark">${quantityTotalBasketCount}</span>`;
+  }
 }

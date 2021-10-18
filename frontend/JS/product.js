@@ -53,3 +53,6 @@ fetch(url2)
   .catch((error) => {
     console.log("erreur :" + error);
   });
+
+//Prévisualisation du panier
+basketPreview();

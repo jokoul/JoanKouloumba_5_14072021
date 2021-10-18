@@ -26,7 +26,8 @@ if (basket.length == 0) {
   //récupération des articles dans le localStorage et affichage dans le tableau"
   displayListArticleInTable(basket);
   //Affiche le prix total du panier
-  calculTotalPriceBasket(basket);
+  const totalPriceBasket = document.getElementById("totalPriceBasket");
+  totalPriceBasket.innerHTML = `${calculTotalPriceBasket(basket)}`;
 }
 
 //a) modification de la quantité avec les boutons +/-
@@ -127,8 +128,12 @@ submitFormBtn.addEventListener("click", (event) => {
       })
       .catch((error) => console.log("erreur : " + error));
   } else {
+    //Sinon un messagepour indiquer que le formulaire est mal remplis
     alert(
       "Veuillez remplir intégralement le formulaire sans ponctuation ni signe spéciaux, merci."
     );
   }
 });
+
+//Prévisualisation du panier
+basketPreview();

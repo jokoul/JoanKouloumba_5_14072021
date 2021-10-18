@@ -31,7 +31,7 @@
     <!--HEADER-->
     <header class="bg-light container-fluid mb-3">
       <nav class="navbar navbar-expand-md navbar-light">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="./../../index.html">
           <img
             src="./../../backend/images/logo.png"
             alt="logo orinoco"
@@ -75,20 +75,27 @@
           <!--Insertion remerciement + information contact + prix total commande et N° id commande par js-->
           <p class="col-12 mb-1">
             <span class="font-weight-bold text-capitalize" id="contactFirstName"
-              >TEST : JOAN</span
+              ><!--Insertion prénom en js--> </span
             >, nous vous remercions pour votre commande passée sur notre site le
-            <span class="font-weight-bold" id="date">TEST : 10/11/2021</span> à
-            <span class="font-weight-bold" id="hour">TEST : 10 : 25</span>.
+            <span class="font-weight-bold" id="dateOrder"
+              ><!--Insertion date de commande en js--></span
+            >
+            à
+            <span class="font-weight-bold" id="hourOrder"
+              ><!--Insertion date de commande en js--></span
+            >.
           </p>
           <p class="col-12 mb-1">
             Le numéro d'identification de votre commande est :
-            <span class="font-weight-bold" id="idOrder"
-              >TEST : 15ZFS856Z44FSAER894ZDZZ3AEZS523A</span
-            >
+            <span class="font-weight-bold text-center" id="idOrder"
+              ><!--Insertion numéro de commande en js--></span
+            >.
           </p>
           <p class="col-12 mb-1">
             Vous allez reçevoir une notification à votre adresse mail
-            <span class="font-weight-bold">TEST : touambi@gmail.com</span>.
+            <span class="font-weight-bold" id="EmailOrder"
+              ><!--Insertion mail en js--></span
+            >.
           </p>
           <p class="col-12 mb-1">
             Votre commande sera livré à l'adresse suivante :
@@ -100,10 +107,10 @@
             TEST : KOUMBA
           </p>
           <p class="col-12 h6 font-weight-bold text-center" id="confirmAddress">
-            TEST : 5 avenue du développement informatique
+            <!--Insertion adresse en js-->
           </p>
           <p class="col-12 h6 font-weight-bold text-center" id="confirmCity">
-            TEST : Toulouse
+            <!--Insertion ville en js-->
           </p>
         </div>
       </div>
@@ -124,14 +131,14 @@
                 <th>Prix Total Article</th>
               </tr>
             </thead>
-            <tbody id="tableList">
+            <tbody id="tableListConfirm">
               <!--Insertion liste de sélection par js-->
             </tbody>
             <tfoot class="thead-light">
               <tr>
                 <td colspan="4"></td>
                 <th>Prix Total Panier</th>
-                <th id="totalPriceBasket">
+                <th id="totalPriceBasketConfirm">
                   <!--Insertion prix total panier par js-->
                 </th>
               </tr>
@@ -141,7 +148,7 @@
       </div>
       <!--IMPRESSION RECU-->
       <div class="container-fluid text-center text-md-right col-12 my-5">
-        <button type="button" class="btn btn-dark mr-md-3" id="printReceipt">
+        <button type="button" class="btn btn-dark mr-md-3" id="printReceiptBtn">
           Imprimer le Reçu
         </button>
       </div>
@@ -167,6 +174,8 @@
         <p class="mt-5">Orinoco © 2021</p>
       </div>
     </footer>
+    <script src="./../JS/function.js"></script>
+    <script src="./../JS/confirmOrder.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script

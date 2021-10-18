@@ -14,3 +14,6 @@ fetch(url)
   .catch((error) => {
     console.log("error : " + error);
   });
+
+//Prévisualisation du panier
+basketPreview();
