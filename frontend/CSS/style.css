@@ -5,3 +5,10 @@
 .badge-dark {
   background-color: #e67a16;
 }
+.orangeLight {
+  background: -moz-linear-gradient(135deg, #ff8a1d, #7435fd);
+  background: -webkit-linear-gradient(135deg, #ff8a1d, #7435fd);
+  background: -ms-linear-gradient(135deg, #ff8a1d, #7435fd);
+  background: -o-linear-gradient(135deg, #ff8a1d, #7435fd);
+  background: linear-gradient(135deg, #ff8a1d, #7435fd);
+}
