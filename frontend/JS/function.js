@@ -14,6 +14,7 @@ function transformPrice(numberPrice) {
   }).format(numberPrice / 100);
   return price;
 }
+//test unitaire avec 19901604 : console.log(transformPrice(19901604)); expected => 199016.04€
 
 //Fonction "addArticleCards" permet d'ajouter les articles à la page d'accueil sous forme de carte.
 function addArticleCards(basket) {
@@ -73,6 +74,7 @@ class Article {
     this.imageUrl = imageUrl;
   }
 }
+//test unitaire : console.log(new Article()); excepted => instance classe Article
 
 //fonction "addArticleToBasket" permet de rajouter l'article personnalisé au panier
 function addArticleToBasket(article) {
@@ -190,6 +192,7 @@ function clearBasket() {
   localStorage.clear();
   location.reload();
 }
+// test unitaire : console.log(basket); expected => affiche les articles dans le panier.
 
 //fonction "displayForm" permet d'afficher le formulaire
 function displayForm() {

@@ -4,7 +4,6 @@
  * 3) Implémenter un bouton pour permettre l'impression du reçu */
 const orderTab = JSON.parse(localStorage.getItem("order")) || [];
 const dateTab = JSON.parse(localStorage.getItem("date")) || [];
-console.log(orderTab);
 
 //1)Insertion des informations liées à la commande
 const contactFirstName = document.getElementById("contactFirstName");
