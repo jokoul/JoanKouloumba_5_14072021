@@ -2,7 +2,8 @@
  */
 
 //variable globale
-const host = "http://localhost:3000";
+//const host = "http://localhost:3000";
+const host = "https://oc-p5-api.herokuapp.com";
 const basket = JSON.parse(localStorage.getItem("cameras")) || [];
 
 //fonction "transformPrice" permet de transformer un nombre en format de prix selon région
