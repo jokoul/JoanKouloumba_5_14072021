@@ -1,4 +1,4 @@
-# JoanKouloumba_5_14072021
+# Projet 5 : Construire un site e-commerce en JavaScript (vanilla)
 
 Parcours développeur web chez OCR - projet 5 : Construire un site e-commerce
 
